@@ -25,7 +25,7 @@
     "--env=TMPDIR=/var/tmp",
     
     /* add paths of TeXlive Flatpak extension binaries */
-    "--env=PATH=/usr/bin:/app/bin:/app/texlive/bin:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux"
+    "--env=PATH=/usr/bin:/app/bin:/app/texlive/bin:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux",
     
     /* allow using the QtWebEngine */
     "--env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess"
@@ -117,8 +117,8 @@
       "sources": [
 	    {
           "type": "archive",
-          "url": "https://github.com/olivierkes/manuskript/archive/0.12.0.zip",
-          "sha256": "676da858d0a3bb658234191b2b36c56dbb07f03371469990de34f7701842c441"
+          "url": "https://github.com/olivierkes/manuskript/archive/0.13.1.zip",
+          "sha256": "0355dc76c47a061fdb1298792bbd8fddf255f9511212f36dc96e7d8c263c87b6"
         },
 		{
 		  "type": "file",
