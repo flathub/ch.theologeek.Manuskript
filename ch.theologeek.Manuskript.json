@@ -9,7 +9,8 @@
       "org.freedesktop.Sdk.Extension.texlive": {
         "directory": "texlive",
         "subdirectories": true,
-        "autodelete": true,
+        "autodelete": false,
+        "no-autodownload": true,
         "version": "21.08"
       }
   },
