@@ -26,7 +26,6 @@ finish-args:
   - --env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess # allow using the QtWebEngine
 
 cleanup:
-  - /lib/debug
   - /lib/pkgconfig
   - /lib/cmake
   - /include
