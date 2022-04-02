@@ -73,7 +73,7 @@ modules:
   - name: manuskript
     buildsystem: simple
     build-commands:
-      - install -d -m755 manuskript /app/lib/manuskript
+      - install -d  /app/lib/manuskript
       - cp -R . /app/lib/manuskript
       - install -D -m755 manuskript.py /app/bin/manuskript
     post-install:
