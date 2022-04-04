@@ -28,11 +28,12 @@ build-commands:
       --enable QtWidgets
       --enable QtWebChannel
       --enable QtPrintSupport
+      --enable QtOpenGL
       #--enable=QtWebKit --enable=QtWebKitWidgets
       #--enable=QtSensors --enable=QtQuick --enable=QtQml --enable=QtTest
       #--enable=QtWebChannel --enable=QtQuickWidgets
       #--enable=QtSql --enable=QtXmlPatterns --enable=QtMultimedia --enable=QtMultimediaWidgets
-      #--enable=QtLocation --enable=QtDesigner --enable=QtOpenGL --enable=QtBluetooth
+      #--enable=QtLocation --enable=QtDesigner --enable=QtBluetooth
       #--enable=QtNfc --enable=QtPositioning
       #--enable=QtHelp --enable=QtPrintSupport --enable=QtXml
       #--enable=QtSerialPort --enable=QtWebSockets --enable=QtRemoteObjects --enable=QtTextToSpeech
