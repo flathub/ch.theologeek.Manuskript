@@ -30,7 +30,6 @@ cleanup:
   - /lib/cmake
   - /include
   - /lib/manuskript/bin
-  - /lib/manuskript/sample-projects
   - /lib/manuskript/package
   - /lib/manuskript/snap
   - /lib/manuskript/util
