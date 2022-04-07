@@ -20,26 +20,41 @@ build-commands:
       --no-qml-plugin
       --no-designer-plugin
       --no-tools
-#      --no-dbus-python
-#      --enable Qt
-#      --enable QtCore
-#      --enable QtGui
-#      --enable QtNetwork
-#      --enable QtWidgets
-#      --enable QtWebChannel
-#      --enable QtPrintSupport
-#      --disable=QtOpenGL
-#      --disable=_QOpenGLFunctions_2_0 --disable=_QOpenGLFunctions_2_1 --disable=_QOpenGLFunctions_4_1_Core
-      #--enable=QtWebKit --enable=QtWebKitWidgets
-      #--enable=QtSensors --enable=QtQuick --enable=QtQml --enable=QtTest
-      #--enable=QtWebChannel --enable=QtQuickWidgets
-      #--enable=QtSql --enable=QtXmlPatterns --enable=QtMultimedia --enable=QtMultimediaWidgets
-      #--enable=QtLocation --enable=QtDesigner --enable=QtBluetooth
-      #--enable=QtNfc --enable=QtPositioning
-      #--enable=QtHelp --enable=QtPrintSupport --enable=QtXml
-      #--enable=QtSerialPort --enable=QtWebSockets --enable=QtRemoteObjects --enable=QtTextToSpeech
-      #--enable=_QOpenGLFunctions_2_0 --enable=_QOpenGLFunctions_2_1 --enable=_QOpenGLFunctions_4_1_Core
-      #--enable=QtDBus --enable=QtSvg --enable=QtX11Extras
+      --no-dbus-python
+      --disable=QtQml
+      --disable=QtBluetooth
+      --disable=QtDBus
+      --disable=QtDesigner
+      --disable=QtHelp
+      --disable=QtMultimedia
+      --disable=QtMultimediaWidgets
+      --disable=QtNfc
+      --disable=QtOpenGL
+      --disable=QtPositioning
+      --disable=QtLocation
+      --disable=QtPrintSupport
+      --disable=QtQuick
+      --disable=QtQuickWidgets
+      --disable=QtRemoteObjects
+      --disable=QtSensors
+      --disable=QtSerialPort
+      --disable=QtSql
+      --disable=QtSvg
+      --disable=QtTest
+      --disable=QtTextToSpeech
+      --disable=QtWebChannel
+      --disable=QtWebSockets
+      --disable=QtX11Extras
+      --disable=QtXml
+      --disable=QtXmlPatterns
+      --disable=_QOpenGLFunctions_2_0
+      --disable=_QOpenGLFunctions_2_1
+      --disable=_QOpenGLFunctions_4_1_Core
+      #--disable=Qt
+      #--disable=QtCore
+      #--disable=QtNetwork
+      #--disable=QtGui
+      #--disable=QtWidgets
 sources:
     - type: archive
       url: https://files.pythonhosted.org/packages/3b/27/fd81188a35f37be9b3b4c2db1654d9439d1418823916fe702ac3658c9c41/PyQt5-5.15.6.tar.gz
