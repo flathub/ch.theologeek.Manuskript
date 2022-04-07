@@ -1,0 +1,5 @@
+.directory
+
+.flatpak-builder/
+build/
+builder/

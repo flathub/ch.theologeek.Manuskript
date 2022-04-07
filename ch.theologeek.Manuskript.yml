@@ -1,0 +1,94 @@
+app-id: ch.theologeek.Manuskript
+runtime: org.kde.Platform
+runtime-version: "5.15-21.08"
+base: io.qt.qtwebengine.BaseApp
+base-version: "5.15-21.08"
+sdk: org.kde.Sdk
+add-extensions:
+  org.freedesktop.Sdk.Extension.texlive:
+    directory: texlive
+    subdirectories: true
+    autodelete: false
+    no-autodownload: true
+    version: '21.08'
+
+command: manuskript
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --socket=x11
+  - --device=dri
+  - --filesystem=home
+  - --env=QT_QPA_PLATFORM=xcb
+  #- --env=TMPDIR=/var/tmp
+  # add paths of TeXlive Flatpak extension binaries
+  - --env=PATH=/usr/bin:/app/bin:/app/texlive/bin:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux
+  - --env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess # allow using the QtWebEngine
+
+cleanup:
+  - /lib/pkgconfig
+  - /lib/cmake
+  - /include
+  - /lib/manuskript/bin
+  - /lib/manuskript/package
+  - /lib/manuskript/snap
+  - /lib/manuskript/util
+  - /lib/manuskript/.github
+  - /lib/manuskript/icons/Manuskript
+  
+modules:
+  - python3-modules.json
+  - python3-pyqt5.yml
+  - python3-pyqt5.qtwebengine.yml
+  
+  - name: enchant
+    buildsystem: autotools
+    sources:
+      - type: archive
+        url: https://github.com/AbiWord/enchant/releases/download/v2.3.1/enchant-2.3.1.tar.gz
+        sha256: 7b4b1afcf2cd8bfa691deea6188404d337f23174bbc39b9c2add2bf340736e9c
+
+  - name: pandoc
+    buildsystem: simple
+    build-commands:
+      - cp -R . /app/
+    sources:
+      - type: archive
+        url: https://github.com/jgm/pandoc/releases/download/2.16.1/pandoc-2.16.1-linux-amd64.tar.gz
+        sha256: 3fe3d42179af289d4f5452b9317d2bc9cd139a4f33a37f68d70e128f1d415aa4
+        only-arches:
+          - x86_64
+      - type: archive
+        url: https://github.com/jgm/pandoc/releases/download/2.16.1/pandoc-2.16.1-linux-arm64.tar.gz
+        sha256: c1130d917fb6e8c9a29cadc52ef9e4c4405450868d5f7dd3018f413755ac2b31
+        only-arches:
+          - aarch64
+    modules:
+      - name: texlive-extension
+        buildsystem: simple
+        build-commands:
+          - mkdir /app/texlive
+
+  - name: manuskript
+    buildsystem: simple
+    build-commands:
+      - install -d  /app/lib/manuskript
+      - cp -R . /app/lib/manuskript
+      - install -D -m755 manuskript.py /app/bin/manuskript
+    post-install:
+        # install icons in several resolutions
+      - install -D -m644 icons/Manuskript/manuskript.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
+      #- install -D -m644 icons/Manuskript/icon-512px.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
+        # install desktop file and application data
+      - install -D -m644 ${FLATPAK_ID}.desktop -t /app/share/applications
+      - install -D -m644 ${FLATPAK_ID}.appdata.xml -t /app/share/appdata
+    sources:
+      - type: archive
+        url: https://github.com/olivierkes/manuskript/archive/refs/tags/0.13.1.tar.gz
+        sha256: a90ad6197210539795507d238d17c001912225283ed2b8142380fac5a063bebf
+      - type: file
+        path: ch.theologeek.Manuskript.desktop
+      - type: file
+        path: manuskript.py
+      - type: file
+        path: ch.theologeek.Manuskript.appdata.xml
