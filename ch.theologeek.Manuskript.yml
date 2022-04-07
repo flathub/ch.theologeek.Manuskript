@@ -19,7 +19,7 @@ finish-args:
   - --socket=x11
   - --device=dri
   - --filesystem=home
-  #- --env=QT_QPA_PLATFORM=xcb
+  - --env=QT_QPA_PLATFORM=xcb
   #- --env=TMPDIR=/var/tmp
   # add paths of TeXlive Flatpak extension binaries
   - --env=PATH=/usr/bin:/app/bin:/app/texlive/bin:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux
