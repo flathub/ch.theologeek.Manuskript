@@ -20,16 +20,16 @@ build-commands:
       --no-qml-plugin
       --no-designer-plugin
       --no-tools
-      --no-dbus-python
-      --enable Qt
-      --enable QtCore
-      --enable QtGui
-      --enable QtNetwork
-      --enable QtWidgets
-      --enable QtWebChannel
-      --enable QtPrintSupport
-      --disable=QtOpenGL
-      --disable=_QOpenGLFunctions_2_0 --disable=_QOpenGLFunctions_2_1 --disable=_QOpenGLFunctions_4_1_Core
+#      --no-dbus-python
+#      --enable Qt
+#      --enable QtCore
+#      --enable QtGui
+#      --enable QtNetwork
+#      --enable QtWidgets
+#      --enable QtWebChannel
+#      --enable QtPrintSupport
+#      --disable=QtOpenGL
+#      --disable=_QOpenGLFunctions_2_0 --disable=_QOpenGLFunctions_2_1 --disable=_QOpenGLFunctions_4_1_Core
       #--enable=QtWebKit --enable=QtWebKitWidgets
       #--enable=QtSensors --enable=QtQuick --enable=QtQml --enable=QtTest
       #--enable=QtWebChannel --enable=QtQuickWidgets
