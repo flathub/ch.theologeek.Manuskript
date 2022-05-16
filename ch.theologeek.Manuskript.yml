@@ -74,21 +74,15 @@ modules:
     build-commands:
       - install -d  /app/lib/manuskript
       - cp -R . /app/lib/manuskript
-      - install -D -m755 manuskript.py /app/bin/manuskript
+      - install -D -m755 package/flatpak/manuskript.py /app/bin/manuskript
     post-install:
         # install icons in several resolutions
       - install -D -m644 icons/Manuskript/manuskript.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
       #- install -D -m644 icons/Manuskript/icon-512px.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
         # install desktop file and application data
-      - install -D -m644 ${FLATPAK_ID}.desktop -t /app/share/applications
-      - install -D -m644 ${FLATPAK_ID}.appdata.xml -t /app/share/appdata
+      - install -D -m644 resources/${FLATPAK_ID}.desktop -t /app/share/applications
+      - install -D -m644 resources/${FLATPAK_ID}.appdata.xml -t /app/share/appdata
     sources:
       - type: archive
         url: https://github.com/olivierkes/manuskript/archive/refs/tags/0.13.1.tar.gz
         sha256: a90ad6197210539795507d238d17c001912225283ed2b8142380fac5a063bebf
-      - type: file
-        path: ch.theologeek.Manuskript.desktop
-      - type: file
-        path: manuskript.py
-      - type: file
-        path: ch.theologeek.Manuskript.appdata.xml
