@@ -54,13 +54,13 @@ modules:
       - cp -R . /app/
     sources:
       - type: archive
-        url: https://github.com/jgm/pandoc/releases/download/2.16.1/pandoc-2.16.1-linux-amd64.tar.gz
-        sha256: 3fe3d42179af289d4f5452b9317d2bc9cd139a4f33a37f68d70e128f1d415aa4
+        url: https://github.com/jgm/pandoc/releases/download/2.18/pandoc-2.18-linux-amd64.tar.gz
+        sha256: 103df36dc21081b7205d763ef7705e340eb0ea7e18694239b328a549892cc007
         only-arches:
           - x86_64
       - type: archive
-        url: https://github.com/jgm/pandoc/releases/download/2.16.1/pandoc-2.16.1-linux-arm64.tar.gz
-        sha256: c1130d917fb6e8c9a29cadc52ef9e4c4405450868d5f7dd3018f413755ac2b31
+        url: https://github.com/jgm/pandoc/releases/download/2.18/pandoc-2.18-linux-arm64.tar.gz
+        sha256: a48160539c27c6a35413667b064f9af154d59ad592563dcaab8a07d427bda594
         only-arches:
           - aarch64
     modules:
@@ -84,5 +84,5 @@ modules:
       - install -D -m644 resources/${FLATPAK_ID}.appdata.xml -t /app/share/appdata
     sources:
       - type: archive
-        url: https://github.com/olivierkes/manuskript/archive/refs/tags/0.13.1.tar.gz
-        sha256: a90ad6197210539795507d238d17c001912225283ed2b8142380fac5a063bebf
+        url: https://github.com/olivierkes/manuskript/archive/refs/tags/0.14.0.tar.gz
+        sha256: 5d7326e4f9941e83a74e186d502c82306b8ae66dccf806bf0bc016e0e933d0ae
