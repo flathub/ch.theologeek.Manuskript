@@ -45,8 +45,8 @@ modules:
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://github.com/AbiWord/enchant/releases/download/v2.3.1/enchant-2.3.1.tar.gz
-        sha256: 7b4b1afcf2cd8bfa691deea6188404d337f23174bbc39b9c2add2bf340736e9c
+        url: https://github.com/AbiWord/enchant/releases/download/v2.3.4/enchant-2.3.4.tar.gz
+        sha256: 1f7e26744db1c9a0fea61d2169f4e5c1ce435cf8c2731c37e3e4054119e994a0
 
   - name: pandoc
     buildsystem: simple
@@ -54,13 +54,13 @@ modules:
       - cp -R . /app/
     sources:
       - type: archive
-        url: https://github.com/jgm/pandoc/releases/download/2.18/pandoc-2.18-linux-amd64.tar.gz
-        sha256: 103df36dc21081b7205d763ef7705e340eb0ea7e18694239b328a549892cc007
+        url: https://github.com/jgm/pandoc/releases/download/3.1/pandoc-3.1-linux-amd64.tar.gz
+        sha256: 37de6be90055d9a7e1b4e3384cd7fc4c42e138a77f62ddeec12f362bfa3ee18e
         only-arches:
           - x86_64
       - type: archive
-        url: https://github.com/jgm/pandoc/releases/download/2.18/pandoc-2.18-linux-arm64.tar.gz
-        sha256: a48160539c27c6a35413667b064f9af154d59ad592563dcaab8a07d427bda594
+        url: https://github.com/jgm/pandoc/releases/download/3.1/pandoc-3.1-linux-arm64.tar.gz
+        sha256: 501d66de88c6e9d143e6631ded152ced7421bc32b6f16cadab18b2064916fe63
         only-arches:
           - aarch64
     modules:
@@ -84,5 +84,5 @@ modules:
       - install -D -m644 resources/${FLATPAK_ID}.appdata.xml -t /app/share/appdata
     sources:
       - type: archive
-        url: https://github.com/olivierkes/manuskript/archive/refs/tags/0.14.0.tar.gz
-        sha256: 5d7326e4f9941e83a74e186d502c82306b8ae66dccf806bf0bc016e0e933d0ae
+        url: https://github.com/olivierkes/manuskript/archive/refs/tags/0.15.0.tar.gz
+        sha256: e9139178c6c10f50817481037483c36329d7f0d5048f3ffecd0b0e9f9c02e027
