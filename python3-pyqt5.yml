@@ -57,8 +57,8 @@ build-commands:
       #--disable=QtPrintSupport
 sources:
     - type: archive
-      url: https://files.pythonhosted.org/packages/3b/27/fd81188a35f37be9b3b4c2db1654d9439d1418823916fe702ac3658c9c41/PyQt5-5.15.6.tar.gz
-      sha256: 80343bcab95ffba619f2ed2467fd828ffeb0a251ad7225be5fc06dcc333af452
+      url: https://files.pythonhosted.org/packages/4d/5d/b8b6e26956ec113ad3f566e02abd12ac3a56b103fcc7e0735e27ee4a1df3/PyQt5-5.15.10.tar.gz
+      sha256: d46b7804b1b10a4ff91753f8113e5b5580d2b4462f3226288e2d84497334898a
 
 modules:
     - name: python3-PyQt-builder
@@ -73,17 +73,17 @@ modules:
           url: https://files.pythonhosted.org/packages/44/6f/7120676b6d73228c96e17f1f794d8ab046fc910d781c8d151120c3f1569e/toml-0.10.2-py2.py3-none-any.whl
           sha256: 806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b
         - type: file
-          url: https://files.pythonhosted.org/packages/80/c1/23fd82ad3121656b585351aba6c19761926bb0db2ebed9e4ff09a43a3fcc/pyparsing-3.0.7-py3-none-any.whl
-          sha256: a6c06a88f252e6c322f65faf8f418b16213b51bdfaece0524c1c1bc30c63c484
+          url: https://files.pythonhosted.org/packages/39/92/8486ede85fcc088f1b3dba4ce92dd29d126fd96b0008ea213167940a2475/pyparsing-3.1.1-py3-none-any.whl
+          sha256: 32c7c0b711493c72ff18a981d24f28aaf9c1fb7ed5e9667c9e84e3db623bdbfb
         - type: file
-          url: https://files.pythonhosted.org/packages/05/8e/8de486cbd03baba4deef4142bd643a3e7bbe954a784dc1bb17142572d127/packaging-21.3-py3-none-any.whl
-          sha256: ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522
+          url: https://files.pythonhosted.org/packages/ec/1a/610693ac4ee14fcdf2d9bf3c493370e4f2ef7ae2e19217d7a237ff42367d/packaging-23.2-py3-none-any.whl
+          sha256: 8c491190033a9af7e1d931d0b5dacc2ef47509b34dd0de67ed209b5203fc88c7
         - type: file
-          url: https://files.pythonhosted.org/packages/de/c1/9ac5596c10f6ce28abc1849ed1b6299b3953af0b6ff21e227024991a517e/sip-6.5.1.tar.gz
-          sha256: 204f0240db8999a749d638a987b351861843e69239b811ec3d1881412c3706a6
+          url: https://files.pythonhosted.org/packages/72/34/65d7891ea2c1232155bc0ccc5fac6db0d1baba184e17b494148bd42cc1a2/sip-6.8.0.tar.gz
+          sha256: 2ed1904820cb661b7207eb1dccfaebec1a5463dcad903ba448ad1945502d089c
         - type: file
-          url: https://files.pythonhosted.org/packages/e4/55/db354bd9dfa613c8f8f6ecb81617caefdfb3e77befba098f8e14ed95e385/PyQt_builder-1.12.2-py3-none-any.whl
-          sha256: 48f754394d235307201ec2b5355934858741201af09433ff543ca40ae57b7865
+          url: https://files.pythonhosted.org/packages/61/26/a0a1ef876c4842b8ef081a7813ed3e693bb33caa866913f1b73fef3802a7/PyQt_builder-1.15.4-py3-none-any.whl
+          sha256: 2dd20ee5f513b137c2abbfd439302d7c6df321fbd9fde17142bb7aff65f5c635
 
     - name: python3-PyQt5-sip
       buildsystem: simple
@@ -92,5 +92,5 @@ modules:
           --prefix=${FLATPAK_DEST} "PyQt5-sip" --no-build-isolation
       sources:
         - type: file
-          url: https://files.pythonhosted.org/packages/c0/86/6b60c6a1b1d10524ed50fc4c6a2989492512bd46292a711318a53b243774/PyQt5_sip-12.9.1.tar.gz
-          sha256: 2f24f299b44c511c23796aafbbb581bfdebf78d0905657b7cee2141b4982030e
+          url: https://files.pythonhosted.org/packages/ee/81/fce2a475aa56c1f49707d9306b930695b6ff078c2242c9f2fd72a3214e1f/PyQt5_sip-12.13.0.tar.gz
+          sha256: 7f321daf84b9c9dbca61b80e1ef37bdaffc0e93312edae2cd7da25b953971d91
