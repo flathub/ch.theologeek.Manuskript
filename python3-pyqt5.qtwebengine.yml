@@ -5,7 +5,7 @@ build-options:
     - QMAKEPATH=/app/lib
 build-commands:
   - sip-install
-    --target-dir ${FLATPAK_DEST}/lib/python3.9/site-packages
+    --target-dir ${FLATPAK_DEST}/lib/python3.11/site-packages
     --scripts-dir ${FLATPAK_DEST}/bin
     --build-dir ./build
     --jobs ${FLATPAK_BUILDER_N_JOBS}

@@ -1,15 +1,15 @@
 name: PyQt5
 cleanup:
     - /include
-    - /lib/python3.9/site-packages/*.pyi
-    - /lib/python3.9/site-packages/PyQt5/uic
+    - /lib/python3.11/site-packages/*.pyi
+    - /lib/python3.11/site-packages/PyQt5/uic
 config-opts:
     - --enable-x11
     - --disable-static
 buildsystem: simple
 build-commands:
     - sip-install
-      --target-dir ${FLATPAK_DEST}/lib/python3.9/site-packages
+      --target-dir ${FLATPAK_DEST}/lib/python3.11/site-packages
       --scripts-dir ${FLATPAK_DEST}/bin
       --build-dir ./build
       --jobs ${FLATPAK_BUILDER_N_JOBS}
