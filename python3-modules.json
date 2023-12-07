@@ -44,20 +44,6 @@
                     "sha256": "bc51ffb2c18ba26eaa1340756ebf96d0d886ed6a31d6f8e7a0094ad49d24550a"
                 }
             ]
-        },
-        {
-            "name": "python3-symspellpy",
-            "buildsystem": "simple",
-            "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"symspellpy\" --no-build-isolation"
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/74/2a/7b1d5a579799bbdff3332a22576626d39de7f11ed9c9a5d927eb9e969d34/symspellpy-6.7.7.tar.gz",
-                    "sha256": "f6c315187780bc2dd30fc9ca32ef076f89bbfcb2a7b3f9a377926f1f6ade0085"
-                }
-            ]
         }
     ]
 }
