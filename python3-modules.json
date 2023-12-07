@@ -12,8 +12,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/fe/4c/a4dbb4e389f75e69dbfb623462dfe0d0e652107a95481d40084830d29b37/lxml-4.6.4.tar.gz",
-                    "sha256": "daf9bd1fee31f1c7a5928b3e1059e09a8d683ea58fb3ffc773b6c88cb8d1399c"
+                    "url": "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz",
+                    "sha256": "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
                 }
             ]
         },
@@ -40,27 +40,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/11/ff/eeccf958759193883dfe63c9cf2dcb6374a581471dcfdb2e775c28ec56c4/pyspellchecker-0.6.2.tar.gz",
-                    "sha256": "af6a1d0393a175499475a873f31e52135f1efd5fc912c979101b795b3c2ee77f"
-                }
-            ]
-        },
-        {
-            "name": "python3-symspellpy",
-            "buildsystem": "simple",
-            "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"symspellpy\" --no-build-isolation"
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/c8/83/d3192c486d81f6ccc10940c9be084682271e514c70ced94b29f4575a4c5c/editdistpy-0.1.3.tar.gz",
-                    "sha256": "b3cad07319d79fe8b3ba6bf92293de962932917d88e9c624df7b6a44bddf1dcc"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/eb/2b/cc0303a1890bd1d622e9d63e0a3b8144917e8bb25df5c1e8465b8f40ca2a/symspellpy-6.7.5.tar.gz",
-                    "sha256": "cde72316ce6082ea2d9da369eb0971b1f7b38b1cca9cf3ffea57c2f7680c1116"
+                    "url": "https://files.pythonhosted.org/packages/f8/79/f897693121146bf18b73b5746280ac24e462e6450dcf512daf986229b36c/pyspellchecker-0.7.2.tar.gz",
+                    "sha256": "bc51ffb2c18ba26eaa1340756ebf96d0d886ed6a31d6f8e7a0094ad49d24550a"
                 }
             ]
         }
