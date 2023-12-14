@@ -84,5 +84,5 @@ modules:
       - install -D -m644 resources/${FLATPAK_ID}.appdata.xml -t /app/share/appdata
     sources:
       - type: archive
-        url: https://github.com/olivierkes/manuskript/archive/refs/tags/0.16.0.tar.gz
-        sha256: 78496986439bbe16f0ed9c141d2c30a670356652e7979429a8e46fb960627702
+        url: https://github.com/olivierkes/manuskript/archive/refs/tags/0.16.1.tar.gz
+        sha256: 129125b3d7ce39f3417b41fc57c6ea2c883cc02ca1899e4b533e6070bc56a18c
