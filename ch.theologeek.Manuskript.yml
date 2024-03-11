@@ -108,3 +108,4 @@ modules:
           version-query: .tag_name
           url-query: .tag_name | sub("^"; "https://github.com/olivierkes/manuskript/archive/refs/tags/")
             | sub("$"; ".tar.gz")
+          is-main-source: true
