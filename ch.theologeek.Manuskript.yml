@@ -21,7 +21,6 @@ finish-args:
   - --device=dri
   - --filesystem=home
   - --env=QT_QPA_PLATFORM=xcb
-  #- --env=TMPDIR=/var/tmp
   # add paths of TeXlive Flatpak extension binaries
   - --env=PATH=/usr/bin:/app/bin:/app/texlive/bin:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux
   - --env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess # allow using the QtWebEngine
@@ -36,7 +35,7 @@ cleanup:
   - /lib/manuskript/util
   - /lib/manuskript/.github
   - /lib/manuskript/icons/Manuskript
-  
+
 modules:
   - python3-modules.json
 
@@ -88,19 +87,18 @@ modules:
     post-install:
         # install icons in several resolutions
       - install -D -m644 icons/Manuskript/manuskript.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
-      #- install -D -m644 icons/Manuskript/icon-512px.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
         # install desktop file and application data
       - install -D -m644 resources/${FLATPAK_ID}.desktop -t /app/share/applications
       - install -D -m644 resources/${FLATPAK_ID}.appdata.xml -t /app/share/appdata
     sources:
       - type: archive
-        archive-type: tar-gzip
-        url: https://api.github.com/repos/olivierkes/manuskript/tarball/0.16.1
-        sha256: 6f2e57b89002dbf0e1ffb48a24565b7134285e84f639d29de1ce6a92c8b6ccb7
+        url: https://github.com/olivierkes/manuskript/archive/refs/tags/0.16.1.tar.gz
+        sha256: 129125b3d7ce39f3417b41fc57c6ea2c883cc02ca1899e4b533e6070bc56a18c
         x-checker-data:
           type: json
           url: https://api.github.com/repos/olivierkes/manuskript/releases/latest
           version-query: .tag_name
-          url-query: .tarball_url
+          url-query: .tag_name | sub("^"; "https://github.com/olivierkes/manuskript/archive/refs/tags/")
+            | sub("$"; ".tar.gz")
       - type: patch
         path: 53f3ec4c317b5196ca82a535be95bf5709190bd2.patch
