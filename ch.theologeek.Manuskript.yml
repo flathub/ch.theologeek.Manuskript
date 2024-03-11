@@ -100,5 +100,6 @@ modules:
           version-query: .tag_name
           url-query: .tag_name | sub("^"; "https://github.com/olivierkes/manuskript/archive/refs/tags/")
             | sub("$"; ".tar.gz")
+          is-main-source: true
       - type: patch
         path: 53f3ec4c317b5196ca82a535be95bf5709190bd2.patch
