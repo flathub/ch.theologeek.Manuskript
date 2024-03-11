@@ -1,8 +1,8 @@
 app-id: ch.theologeek.Manuskript
 runtime: org.kde.Platform
-runtime-version: "5.15-23.08"
+runtime-version: 5.15-23.08
 base: io.qt.qtwebengine.BaseApp
-base-version: "5.15-23.08"
+base-version: 5.15-23.08
 sdk: org.kde.Sdk
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
@@ -20,7 +20,6 @@ finish-args:
   - --device=dri
   - --filesystem=home
   - --env=QT_QPA_PLATFORM=xcb
-  #- --env=TMPDIR=/var/tmp
   # add paths of TeXlive Flatpak extension binaries
   - --env=PATH=/usr/bin:/app/bin:/app/texlive/bin:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux
   - --env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess # allow using the QtWebEngine
@@ -35,18 +34,24 @@ cleanup:
   - /lib/manuskript/util
   - /lib/manuskript/.github
   - /lib/manuskript/icons/Manuskript
-  
+
 modules:
   - python3-modules.json
   - python3-pyqt5.yml
   - python3-pyqt5.qtwebengine.yml
-  
+
   - name: enchant
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://github.com/AbiWord/enchant/releases/download/v2.6.1/enchant-2.6.1.tar.gz
-        sha256: f24e12469137ae1d03140bb9032a47a5947c36f4d1e2f12b929061005eb15279
+        url: https://github.com/AbiWord/enchant/releases/download/v2.6.7/enchant-2.6.7.tar.gz
+        sha256: a1c2e5b59acca000bbfb24810af4a1165733d407f2154786588e076c8cd57bfc
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/AbiWord/enchant/releases/latest
+          version-query: .tag_name | sub("^v"; "")
+          url-query: .assets[] | select(.name=="enchant-" + $version + ".tar.gz")
+            | .browser_download_url
 
   - name: pandoc
     buildsystem: simple
@@ -54,15 +59,27 @@ modules:
       - cp -R . /app/
     sources:
       - type: archive
-        url: https://github.com/jgm/pandoc/releases/download/3.1.8/pandoc-3.1.8-linux-amd64.tar.gz
-        sha256: c07923a65321b4246658635edce517ae6578abb65396bff914feef37bc48784b
+        url: https://github.com/jgm/pandoc/releases/download/3.1.12.2/pandoc-3.1.12.2-linux-amd64.tar.gz
+        sha256: 40da725277f7617d045fc761b0375b3ba0990c5d03a908c207fed61b78e34986
         only-arches:
           - x86_64
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/jgm/pandoc/releases/latest
+          version-query: .tag_name
+          url-query: .assets[] | select(.name=="pandoc-" + $version + "-linux-amd64.tar.gz")
+            | .browser_download_url
       - type: archive
-        url: https://github.com/jgm/pandoc/releases/download/3.1.8/pandoc-3.1.8-linux-arm64.tar.gz
-        sha256: 0d5770582781059a24fa24a21aa888657ecbee601545b3339081166055572ad7
+        url: https://github.com/jgm/pandoc/releases/download/3.1.12.2/pandoc-3.1.12.2-linux-arm64.tar.gz
+        sha256: 9032b273aec5a1050b2e5f724c8a9dcaf657540c68e44dc477ec9fc38aebc173
         only-arches:
           - aarch64
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/jgm/pandoc/releases/latest
+          version-query: .tag_name
+          url-query: .assets[] | select(.name=="pandoc-" + $version + "-linux-arm64.tar.gz")
+            | .browser_download_url
     modules:
       - name: texlive-extension
         buildsystem: simple
@@ -78,7 +95,6 @@ modules:
     post-install:
         # install icons in several resolutions
       - install -D -m644 icons/Manuskript/manuskript.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
-      #- install -D -m644 icons/Manuskript/icon-512px.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
         # install desktop file and application data
       - install -D -m644 resources/${FLATPAK_ID}.desktop -t /app/share/applications
       - install -D -m644 resources/${FLATPAK_ID}.appdata.xml -t /app/share/appdata
@@ -86,3 +102,9 @@ modules:
       - type: archive
         url: https://github.com/olivierkes/manuskript/archive/refs/tags/0.16.1.tar.gz
         sha256: 129125b3d7ce39f3417b41fc57c6ea2c883cc02ca1899e4b533e6070bc56a18c
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/olivierkes/manuskript/releases/latest
+          version-query: .tag_name
+          url-query: .tag_name | sub("^"; "https://github.com/olivierkes/manuskript/archive/refs/tags/")
+            | sub("$"; ".tar.gz")
