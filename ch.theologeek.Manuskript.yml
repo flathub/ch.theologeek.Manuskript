@@ -100,3 +100,5 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
+      - type: patch
+        path: 53f3ec4c317b5196ca82a535be95bf5709190bd2.patch
