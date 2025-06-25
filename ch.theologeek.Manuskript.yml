@@ -93,12 +93,14 @@ modules:
       - install -D -m644 resources/${FLATPAK_ID}.desktop -t /app/share/applications
       - install -D -m644 resources/${FLATPAK_ID}.appdata.xml -t /app/share/appdata
     sources:
-      - type: git
-        url: https://github.com/olivierkes/manuskript.git
-        tag: 0.16.1
-        commit: 5a109250bb0786c48c040a26f1a4d06cd2a33c40
+      - type: archive
+        archive-type: tar-gzip
+        url: https://api.github.com/repos/olivierkes/manuskript/tarball/0.16.1
+        sha256: 129125b3d7ce39f3417b41fc57c6ea2c883cc02ca1899e4b533e6070bc56a18c
         x-checker-data:
-          type: git
-          tag-pattern: ^([\d.]+)$
+          type: json
+          url: https://api.github.com/repos/olivierkes/manuskript/releases/latest
+          version-query: .tag_name
+          url-query: .tarball_url
       - type: patch
         path: 53f3ec4c317b5196ca82a535be95bf5709190bd2.patch
