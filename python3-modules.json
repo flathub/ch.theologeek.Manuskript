@@ -12,8 +12,12 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz",
-                    "sha256": "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
+                    "url": "https://files.pythonhosted.org/packages/76/3d/14e82fc7c8fb1b7761f7e748fd47e2ec8276d137b6acfe5a4bb73853e08f/lxml-5.4.0.tar.gz",
+                    "sha256": "d12832e1dbea4be280b22fd0ea7c9b87f0d8fc51ba06e92dc62d52f804f78ebd",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "lxml"
+                    }
                 }
             ]
         },
@@ -26,8 +30,13 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/b1/a3/86763b6350727ca81c8fcc5bb5bccee416e902e0085dc7a902c81233717e/pyenchant-3.2.2.tar.gz",
-                    "sha256": "1cf830c6614362a78aab78d50eaf7c6c93831369c52e1bb64ffae1df0341e637"
+                    "url": "https://files.pythonhosted.org/packages/54/4c/a741dddab6ad96f257d90cb4d23067ffadac526c9cab3a99ca6ce3c05477/pyenchant-3.2.2-py3-none-any.whl",
+                    "sha256": "5facc821ece957208a81423af7d6ec7810dad29697cb0d77aae81e4e11c8e5a6",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "pyenchant",
+                        "packagetype": "bdist_wheel"
+                    }
                 }
             ]
         },
@@ -40,8 +49,13 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/f8/79/f897693121146bf18b73b5746280ac24e462e6450dcf512daf986229b36c/pyspellchecker-0.7.2.tar.gz",
-                    "sha256": "bc51ffb2c18ba26eaa1340756ebf96d0d886ed6a31d6f8e7a0094ad49d24550a"
+                    "url": "https://files.pythonhosted.org/packages/94/95/f0ee873c7ff455f2ef16a58320954ed6c6f8d30d59c8c781154deb398bd8/pyspellchecker-0.8.3-py3-none-any.whl",
+                    "sha256": "e993076e98b0da5a99b7cc31085c3022c77a9dc37c5e95f5cf6304b5dbb8b9d2",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "pyspellchecker",
+                        "packagetype": "bdist_wheel"
+                    }
                 }
             ]
         }
