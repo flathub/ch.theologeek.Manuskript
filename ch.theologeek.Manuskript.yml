@@ -1,8 +1,8 @@
 app-id: ch.theologeek.Manuskript
 runtime: org.kde.Platform
-runtime-version: "5.15-23.08"
-base: io.qt.qtwebengine.BaseApp
-base-version: "5.15-23.08"
+runtime-version: "5.15-24.08"
+base: com.riverbankcomputing.PyQt.BaseApp
+base-version: "5.15-24.08"
 sdk: org.kde.Sdk
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
@@ -11,8 +11,9 @@ add-extensions:
     autodelete: false
     no-autodownload: true
     version: '23.08'
-
 command: manuskript
+cleanup-commands:
+  - /app/cleanup-BaseApp.sh
 finish-args:
   - --share=ipc
   - --share=network
@@ -38,15 +39,16 @@ cleanup:
   
 modules:
   - python3-modules.json
-  - python3-pyqt5.yml
-  - python3-pyqt5.qtwebengine.yml
-  
+
   - name: enchant
-    buildsystem: autotools
     sources:
       - type: archive
-        url: https://github.com/AbiWord/enchant/releases/download/v2.6.1/enchant-2.6.1.tar.gz
-        sha256: f24e12469137ae1d03140bb9032a47a5947c36f4d1e2f12b929061005eb15279
+        url: https://github.com/rrthomas/enchant/releases/download/v2.8.10/enchant-2.8.10.tar.gz
+        sha256: 6db791265ace652c63a6d24f376f4c562b742284d70d3ccb9e1ce8be45b288c9
+        x-checker-data:
+          type: anitya
+          project-id: 6601
+          url-template: https://github.com/rrthomas/enchant/releases/download/v$version/enchant-$version.tar.gz
 
   - name: pandoc
     buildsystem: simple
@@ -54,15 +56,23 @@ modules:
       - cp -R . /app/
     sources:
       - type: archive
-        url: https://github.com/jgm/pandoc/releases/download/3.1.8/pandoc-3.1.8-linux-amd64.tar.gz
-        sha256: c07923a65321b4246658635edce517ae6578abb65396bff914feef37bc48784b
+        url: https://github.com/jgm/pandoc/releases/download/3.7.0.2/pandoc-3.7.0.2-linux-amd64.tar.gz
+        sha256: 8f8f67fdd540b6519326b0ac49d5c55c5d5d15e43920e80a086e02c8aff83268
         only-arches:
           - x86_64
+        x-checker-data:
+          type: anitya
+          project-id: 2589
+          url-template: https://github.com/jgm/pandoc/releases/download/$version/pandoc-$version-linux-amd64.tar.gz
       - type: archive
-        url: https://github.com/jgm/pandoc/releases/download/3.1.8/pandoc-3.1.8-linux-arm64.tar.gz
-        sha256: 0d5770582781059a24fa24a21aa888657ecbee601545b3339081166055572ad7
+        url: https://github.com/jgm/pandoc/releases/download/3.7.0.2/pandoc-3.7.0.2-linux-arm64.tar.gz
+        sha256: 4ef2997ff0fa7f86ada5a217722f4f732293e38518b4442ececce16628bd0e44
         only-arches:
           - aarch64
+        x-checker-data:
+          type: anitya
+          project-id: 2589
+          url-template: https://github.com/jgm/pandoc/releases/download/$version/pandoc-$version-linux-arm64.tar.gz
     modules:
       - name: texlive-extension
         buildsystem: simple
@@ -83,6 +93,10 @@ modules:
       - install -D -m644 resources/${FLATPAK_ID}.desktop -t /app/share/applications
       - install -D -m644 resources/${FLATPAK_ID}.appdata.xml -t /app/share/appdata
     sources:
-      - type: archive
-        url: https://github.com/olivierkes/manuskript/archive/refs/tags/0.16.1.tar.gz
-        sha256: 129125b3d7ce39f3417b41fc57c6ea2c883cc02ca1899e4b533e6070bc56a18c
+      - type: git
+        url: https://github.com/olivierkes/manuskript.git
+        tag: 0.16.1
+        commit: 5a109250bb0786c48c040a26f1a4d06cd2a33c40
+        x-checker-data:
+          type: git
+          tag-pattern: ^([\d.]+)$
