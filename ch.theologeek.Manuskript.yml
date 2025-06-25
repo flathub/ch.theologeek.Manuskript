@@ -96,7 +96,7 @@ modules:
       - type: archive
         archive-type: tar-gzip
         url: https://api.github.com/repos/olivierkes/manuskript/tarball/0.16.1
-        sha256: 129125b3d7ce39f3417b41fc57c6ea2c883cc02ca1899e4b533e6070bc56a18c
+        sha256: 6f2e57b89002dbf0e1ffb48a24565b7134285e84f639d29de1ce6a92c8b6ccb7
         x-checker-data:
           type: json
           url: https://api.github.com/repos/olivierkes/manuskript/releases/latest
