@@ -10,7 +10,7 @@ add-extensions:
     subdirectories: true
     autodelete: false
     no-autodownload: true
-    version: '23.08'
+    version: '24.08'
 command: manuskript
 cleanup-commands:
   - /app/cleanup-BaseApp.sh
