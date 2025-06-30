@@ -1,8 +1,8 @@
 app-id: ch.theologeek.Manuskript
 runtime: org.kde.Platform
-runtime-version: "5.15-24.08"
+runtime-version: 5.15-24.08
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: "5.15-24.08"
+base-version: 5.15-24.08
 sdk: org.kde.Sdk
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
@@ -48,7 +48,8 @@ modules:
           type: json
           url: https://api.github.com/repos/rrthomas/enchant/releases/latest
           version-query: .tag_name | sub("^v"; "")
-          url-query: .assets[] | select(.name=="enchant-" + $version + ".tar.gz") | .browser_download_url
+          url-query: .assets[] | select(.name=="enchant-" + $version + ".tar.gz")
+            | .browser_download_url
 
   - name: pandoc
     buildsystem: simple
@@ -64,7 +65,8 @@ modules:
           type: json
           url: https://api.github.com/repos/jgm/pandoc/releases/latest
           version-query: .tag_name
-          url-query: .assets[] | select(.name=="pandoc-" + $version + "-linux-amd64.tar.gz") | .browser_download_url
+          url-query: .assets[] | select(.name=="pandoc-" + $version + "-linux-amd64.tar.gz")
+            | .browser_download_url
       - type: archive
         url: https://github.com/jgm/pandoc/releases/download/3.7.0.2/pandoc-3.7.0.2-linux-arm64.tar.gz
         sha256: 4ef2997ff0fa7f86ada5a217722f4f732293e38518b4442ececce16628bd0e44
@@ -74,7 +76,8 @@ modules:
           type: json
           url: https://api.github.com/repos/jgm/pandoc/releases/latest
           version-query: .tag_name
-          url-query: .assets[] | select(.name=="pandoc-" + $version + "-linux-arm64.tar.gz") | .browser_download_url
+          url-query: .assets[] | select(.name=="pandoc-" + $version + "-linux-arm64.tar.gz")
+            | .browser_download_url
     modules:
       - name: texlive-extension
         buildsystem: simple
@@ -95,8 +98,8 @@ modules:
       - install -D -m644 resources/${FLATPAK_ID}.appdata.xml -t /app/share/appdata
     sources:
       - type: archive
-        url: https://github.com/olivierkes/manuskript/archive/refs/tags/0.16.1.tar.gz
-        sha256: 129125b3d7ce39f3417b41fc57c6ea2c883cc02ca1899e4b533e6070bc56a18c
+        url: https://github.com/olivierkes/manuskript/archive/refs/tags/0.17.0.tar.gz
+        sha256: a31d8918b28bcb0f42a614fdc6e2732eca1cd276b9ed1664d1b9cad2e66393ab
         x-checker-data:
           type: json
           url: https://api.github.com/repos/olivierkes/manuskript/releases/latest
