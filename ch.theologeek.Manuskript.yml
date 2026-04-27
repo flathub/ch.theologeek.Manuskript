@@ -1,8 +1,8 @@
 app-id: ch.theologeek.Manuskript
 runtime: org.kde.Platform
-runtime-version: 5.15-24.08
+runtime-version: 5.15-25.08
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: 5.15-24.08
+base-version: 5.15-25.08
 sdk: org.kde.Sdk
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
@@ -10,7 +10,7 @@ add-extensions:
     subdirectories: true
     autodelete: false
     no-autodownload: true
-    version: '24.08'
+    version: '25.08'
 command: manuskript
 cleanup-commands:
   - /app/cleanup-BaseApp.sh
@@ -35,6 +35,8 @@ cleanup:
   - /lib/manuskript/util
   - /lib/manuskript/.github
   - /lib/manuskript/icons/Manuskript
+  - /share/doc
+  - /share/man
 
 modules:
   - python3-modules.json
