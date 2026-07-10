@@ -44,8 +44,8 @@ modules:
   - name: enchant
     sources:
       - type: archive
-        url: https://github.com/rrthomas/enchant/releases/download/v2.8.17/enchant-2.8.17.tar.gz
-        sha256: ee40256e271d0bc1f212ecbc8b8d3da9066b33c9ca987d266759665eb0ca694d
+        url: https://github.com/rrthomas/enchant/releases/download/v2.8.19/enchant-2.8.19.tar.gz
+        sha256: 8e7f6cb0c3b79be3146eb3ab93650484adbc59dae5f2c1958fde557080ba678c
         x-checker-data:
           type: json
           url: https://api.github.com/repos/rrthomas/enchant/releases/latest
