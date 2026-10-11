@@ -49,8 +49,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/11/70/df4b8816f5e1aa8b46fbc2b1d104d8f5bc13ec92fb69310b35bc56ea7260/pyspellchecker-0.9.0-py3-none-any.whl",
-                    "sha256": "97eaed776e0854f69aafb723f6962b403099e50c9a1d9c05525c819f4b0f5d54",
+                    "url": "https://files.pythonhosted.org/packages/7f/3b/558bc6def007152f0128ff0c8a6825708ac22bafdb295dc85cbec1f6ec22/pyspellchecker-0.9.1-py3-none-any.whl",
+                    "sha256": "c79b144b4bad20024bf489ad3ffd96b76f3f53439e9fa59ac607896352852f3d",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "pyspellchecker",
